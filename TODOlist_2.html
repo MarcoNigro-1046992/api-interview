@@ -1,0 +1,53 @@
+<!-- Alternativa -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bold {
+            font-weight: bold;
+            color: green !important;
+        }
+
+        .item {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>TODO list</h1>
+    <h3>Insert an item: </h3>
+
+    <input type="text" id="input">
+    <button onclick="addItem()">Add item</button>
+    <div id="list"></div>
+
+    <script>
+        let inputText = document.getElementById("input");
+        let list = document.getElementById("list");
+
+        function addItem() {
+
+            const item = document.createElement("li");
+            item.classList.toggle("item");
+            item.innerText = inputText.value;
+
+            list.appendChild(item);
+
+            item.onclick = () => {
+                item.classList.toggle("bold");
+
+            };
+
+            inputText.value = "";
+        }
+    </script>
+</body>
+
+</html>

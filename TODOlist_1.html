@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            font-weight: normal;
+            color: red;
+        }
+
+        .bold {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input" />
+    <button onclick="insertItem()">Add Item</button>
+
+    <div id="list"></div>
+
+    <script>
+        const textInput = document.getElementById("input");
+        const list = document.getElementById("list");
+
+        function insertItem() {
+            list.innerHTML += `<ul >
+                                   <li class="item" onclick="makeBold(this)">${textInput.value}</li>
+                                </ul>`;
+            textInput.value = "";
+        }
+
+        function makeBold(item) {
+            item.classList.toggle("bold");
+        }
+    </script>
+
+
+</body>
+
+
+</html>
